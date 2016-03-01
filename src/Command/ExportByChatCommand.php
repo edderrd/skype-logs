@@ -162,6 +162,7 @@ class ExportByChatCommand extends Command
         // replace unsafe chars
         $destination = strtr($destination, DIRECTORY_SEPARATOR, '_');
         $destination = strtr($destination, ':', '_');
+        $destination = strtr($destination, '*', '_');
 
         return $destination;
     }
