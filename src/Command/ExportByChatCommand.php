@@ -160,7 +160,8 @@ class ExportByChatCommand extends Command
         $destination = str_replace("<chatname>", $this->input->getArgument('chatname'), $destination);
 
         // replace unsafe chars
-        $destination = strtr($destination, DIRECTORY_SEPARATOR, '_');
+        $destination = strtr($destination, '/', '_');
+        $destination = strtr($destination, '\\', '_');
         $destination = strtr($destination, ':', '_');
         $destination = strtr($destination, '*', '_');
 
